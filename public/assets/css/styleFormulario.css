@@ -59,15 +59,12 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 2rem;
-}
-.login-button button:hover{
-    background-color: #05927C;
-}
-.login-button button a {
-    text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
+}
+.login-button button:hover{
+    background-color: #05927C;
 }
 .form-header h1::after{
     content:'';
@@ -137,17 +134,13 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 2rem;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
 }
 .back-button button:hover{
     background-color: #05927C;
 }
-.back-button button a{
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-} 
-
 @media screen and (max-width: 1487px){
     .form-header{
         margin-top: 1rem;

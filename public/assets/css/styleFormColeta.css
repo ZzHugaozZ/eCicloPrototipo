@@ -115,6 +115,7 @@ body{
 .gender-input{
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
 }
 .gender-input input{
     margin-right: 0.35rem;

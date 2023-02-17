@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.fundo{ 
+    
+    background: linear-gradient(0.46turn,#088D85 10% ,#37C7B5 60%, rgb(206, 212, 217) 40%);
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+
+     
+}
+body{
+    background-color: rgb(206, 212, 217);
+}
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 8vh;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3p
+    x;
+    margin-left: 32px;
+}
+.nav-list a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.nav-list a:hover{
+    opacity: 0.7;
+}
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.mobile-menu div{
+    width: 30px;
+    height: 2px;
+    background: #FFFFFF;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.conteudo {
+    padding: 10px;
+}
+
+.conteudo_principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.conteudo_escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.logo_imagem {
+    position: absolute;
+    width: 193px;
+    height: 150px;
+    left: 42px;
+    top: 56px;
+}
+
+.primeiro-texto {
+    font-style: normal;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: clamp(1.60em, 1em + 2vw, 2.5em);
+    line-height: 105%;
+    color: white;
+    position: absolute;
+    width: 475px;
+    height: 23px;
+    left: 40px;
+    top: 213px;
+}
+
+.segundo-texto {
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(1.60em, 1em + 2vw, 2.5em);
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: white;
+    position: absolute;
+    width: 580px;
+    height: 132px;
+    left: 40px;
+    top: 242px;
+    margin-top: 4rem;
+}
+
+.terceiro-texto {
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(1.60em, 1em + 2vw, 2.5em);
+    line-height: 150%;
+    color: white;
+    position: absolute;
+    width: 580px;
+    height: 24px;
+    left: 40px;
+    top: 387px;
+    margin-top: 1rem;
+}
+
+.button {
+    box-sizing: content-box;
+    
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    width: 184px;
+    height: 50px;
+    left: 113px;
+    top: 424px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+    cursor: pointer;
+    background: none;
+    color: white;
+    margin-top: 6rem;
+}
+
+.button:active{
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
+}
+.conteudo-dois {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+
+
+.retangulo1{
+    position: absolute;
+    width: 288px;
+    height: 321px;
+    left: 45%;
+    top: 47%;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 60px 10px rgba(0, 0, 0, 0.19);
+    border-radius: 32px;
+    
+}
+
+.retangulo2{
+    position: absolute;
+    margin-left: 3rem;
+    width: 288px;   /*largura*/
+    height: 321px;  /*altura*/
+    left: 64%;      /*para frente*/
+    top: 47%;       /*pra cima */
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 60px 10px rgba(0, 0, 0, 0.19);
+    border-radius: 35px;
+}
+
+.logo-doar {
+    position: absolute;
+    left: 35.9%;
+    right: 38.26%;
+    top: 18.67%;
+    bottom: 35%;
+}
+.doe-aqui {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    position: absolute;
+    width: 184px;
+    height: 48px;
+    left: 50px;
+    top: 150px;
+    text-align: center;
+
+}
+
+.button_entrar {
+    box-sizing: border-box;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #088D85;
+    border-radius: 10px;
+    position: absolute;
+    width: 184px;
+    height: 56px;
+    left: 50px;
+    top: 225px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+    color: #088D85;
+    cursor: pointer;
+    
+}
+
+
+.logo-cadastro {
+    position: absolute;
+    left: 35.9%;
+    right: 38.26%;
+    top: 18.67%;
+    bottom: 35%;
+    
+}
+
+.bandeira {
+    position: absolute;
+    left: 40.9%;
+    right: 39.26%;
+    top: 20.67%;
+    bottom: 33%;
+    
+}
+
+.cadastro {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    position: absolute;
+    width: 184px;
+    height: 48px;
+    left: 50px;
+    top: 150px;
+    text-align: center;
+}
+
+.button_cadastrar {
+    box-sizing: border-box;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #088D85;
+    border-radius: 10px;
+    position: absolute;
+    width: 184px;
+    height: 56px;
+    left: 50px;
+    top: 225px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+}
+.button_cadastrar a{
+    text-decoration: none;
+    color: #088D85;
+    cursor: pointer;
+}
+.link-coleta{
+    text-decoration: none;
+    text-decoration: none;
+    color: #088D85;
+    cursor: pointer;
+}
+@media (max-width: 999px) {
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        z-index: 1;
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background:#088D85 ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform:translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+
+.nav-list.active{
+    transform: translateX(0);
+}
+@keyframes navLinksFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px,8px);
+}
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px,-7px);
+}
+
+@media screen and (max-width: 999px) {
+    .conteudo-dois{
+        margin-top: 32rem;
+        position: absolute;
+        flex-direction: row;
+        align-items: center;
+    }
+    .retangulo1{
+        margin-left: 3rem;
+    }
+    .retangulo2{
+        margin-top: 25rem;
+    }
+}
