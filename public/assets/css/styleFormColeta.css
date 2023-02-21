@@ -52,6 +52,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
     margin-top: 2rem;
+    color: #fff;
 }
 .login-button button:hover{
     background-color: #05927C;
@@ -132,6 +133,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
     margin-top: 2rem;
+    color: #fff;
 }
 .back-button button:hover{
     background-color: #05927C;

@@ -109,24 +109,16 @@
 .input-box input::placeholder{
     color: #000000be;
 }
-.gender-group{
+#genero{
     display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 0.5rem;
-}
-.gender-input{
-    display: flex;
+    justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
-.gender-input input{
-    margin-right: 0.35rem;
+#genero:focus-visible{
+    outline: 2px solid #05927C;
 }
-.gender-input label{
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
+
 .back-button button{
     border: none;
     background-color: #2ae6c6;

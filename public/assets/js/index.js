@@ -25,6 +25,7 @@ btSign.addEventListener("click", async(err) => {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     alert("Ambiente Logado no Firebase")
+    window.location.href = "../tInicial.html"
     const user = userCredential.user;
   })
   .catch((error) => {
@@ -33,4 +34,7 @@ btSign.addEventListener("click", async(err) => {
     alert(errorCode + " | " + "Deu Rum não existe no Firebase.")
   });
 });
+btVoltar.addEventListener("click", (err) => {
+  window.location.href = "../index.html";
+})
 
