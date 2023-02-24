@@ -1,7 +1,0 @@
-[
-    { "id": 1, "descricao": "R. Cesário Motta - Centro", "numero":"n° 644" , "cidadeId": 1},
-    { "id": 2, "descricao": "R. Francisco Valzachi - Vila Rosa", "numero":"n° 51" , "cidadeId": 2},
-    { "id": 3, "descricao": "Av. Bandeirantes - Centro", "numero":"n° 503" , "cidadeId": 3},
-    { "id": 4, "descricao": "R. Mal. Deodoro - Centro", "numero":"n° 3183" , "cidadeId": 4 }
-
-]

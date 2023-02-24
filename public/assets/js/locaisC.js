@@ -1,5 +1,5 @@
 import cidades from '../dados/cidades.json' assert {type:'json'};
-import endereco from '../dados/enderoco.json' assert {type:'json'};
+import endereco from '../dados/endereco.json' assert {type:'json'};
 
 
 function popularCategoria()
@@ -55,10 +55,14 @@ function exibirEndereco(cidadeId)
         let h4Numero = document.createElement('h4');
         h4Numero.innerText = local.numero;
 
+        let rua = document.createElement('h4');
+        rua.innerText= local.rua;
+
 
         divCard.appendChild(h4NomeLocalC);
+        divCard.appendChild(rua);
         divCard.appendChild(h4Numero);
-
+        
         divEndereco.appendChild(divCard);
 
     });
