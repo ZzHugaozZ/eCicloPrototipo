@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(206, 212, 217);
+    background-color: rgb(244, 248, 252);
     margin: 0;
 }
 
@@ -21,6 +21,7 @@ body {
 .flex-container {
     display: flex;
     height: 100%;
+    background-color: rgb(244, 248, 252);
 }
 
 .flex-menu {
