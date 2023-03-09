@@ -35,6 +35,6 @@ btSign.addEventListener("click", async(err) => {
   });
 });
 btVoltar.addEventListener("click", (err) => {
-  window.location.href = "../index.html";
+  window.location.href = "../telas/index.html";
 })
 

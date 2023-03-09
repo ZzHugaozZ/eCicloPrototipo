@@ -1,3 +1,3 @@
 btVoltar.addEventListener("click", (err) => {
-    window.location.href = "../tInicial.html";
+    window.location.href = "../telas/tInicial.html";
   })

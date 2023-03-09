@@ -61,5 +61,5 @@ btConfirmar.addEventListener("click", async (erro) => {
 
 })
 btVoltar.addEventListener("click", (err) => {
-    window.location.href = "../index.html";
+    window.location.href = "../telas/index.html";
 })

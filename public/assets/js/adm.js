@@ -13,6 +13,6 @@ function Confirmar(){
     }
 
     cidades.push(objCategoria);
-    console.log(cidades);
+    console.log(objCategoria);
 }
 

@@ -20,8 +20,8 @@ body{
     align-items: center;
 } 
 .container-flex{
-    width: 80%;
-    height: 80vh;
+    width: 60vh;
+    height: 45vw;
     display: flex;
     box-shadow:  rgba(0, 0, 0, .212);
 
@@ -100,7 +100,7 @@ body{
 }
 .input-box label,
 .gender-title h6{
-    font-size: 0.80rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #000000c0;
 }
@@ -122,7 +122,7 @@ body{
     margin-right: 0.35rem;
 }
 .gender-input label{
-    font-size: 0.81rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #000000c0;
 }
