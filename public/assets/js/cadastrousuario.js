@@ -4,17 +4,18 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 
 //#region Configuração do App Key
 const firebaseConfig = {
-    apiKey: "AIzaSyCIewhvwhvbabisNkBjYWHtSgRnZh49aog",
-    authDomain: "ecicloo.firebaseapp.com",
-    projectId: "ecicloo",
-    storageBucket: "ecicloo.appspot.com",
-    messagingSenderId: "621707276043",
-    appId: "1:621707276043:web:d18d697c865bff8b187c0e"
-};
+    apiKey: "AIzaSyAhXGsmHm-6UshQtlwogiQTDhmZHAwWDUs",
+    authDomain: "eciclo-prod.firebaseapp.com",
+    projectId: "eciclo-prod",
+    storageBucket: "eciclo-prod.appspot.com",
+    messagingSenderId: "79000886048",
+    appId: "1:79000886048:web:393eeb67fcb4e92bb75545",
+    measurementId: "G-078JQKC7V1"
+  };
 const app = initializeApp(firebaseConfig);
 //#endregion
-const db = getFirestore(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const btConfirmar = document.getElementById("btConfirmar");
 const btVoltar = document.getElementById("btVoltar");
 
@@ -33,33 +34,32 @@ btConfirmar.addEventListener("click", async (erro) => {
             const errorMessage = error.message;
             alert("Deu ruim!")
         });
-
-
-
 })
+
 btConfirmar.addEventListener("click", async (erro) => {
     var cadastro = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
-        celular: document.getElementById("celular").value,
-        endereco: document.getElementById("endereco").value,
-        numero: document.getElementById("numero").value,
-        genero: document.getElementById("genero").value
+        celular: document.getElementById("celular").value
     }
-    if (!cadastro.nome || !cadastro.email || !cadastro.celular || !cadastro.endereco || !cadastro.numero || !cadastro.genero) {
+    setTimeout(() => {
+        console.log({ cadastro });
+    }, 5000);
+    if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
         console.error("Erro de comunicação: ", e);
     } else {
         try {
-            const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
-            debugger;
+            const usuarios = await addDoc(collection(db, "usuarios"), {
+                nome: "Victor Icoma"
+            });
             console.log("Coleção ID: ", usuarios.id);
-            window.location.href = "../login/login.html";
         } catch (e) {
             console.error("Erro de comunicação: ", e);
         }
     }
 
 })
+
 btVoltar.addEventListener("click", (err) => {
     window.location.href = "../telas/index.html";
 })

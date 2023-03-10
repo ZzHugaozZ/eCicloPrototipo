@@ -1,5 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
+
+var serviceAccount = require("./serviceAccount.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
 //#region Configuração do App Key
 const firebaseConfig = {
   apiKey: "AIzaSyCIewhvwhvbabisNkBjYWHtSgRnZh49aog",
