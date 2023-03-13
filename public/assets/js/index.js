@@ -1,22 +1,23 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
-var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
+// var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
 
-var serviceAccount = require("./serviceAccount.json");
+// var serviceAccount = require("./serviceAccount.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
 
 //#region Configuração do App Key
 const firebaseConfig = {
-  apiKey: "AIzaSyCIewhvwhvbabisNkBjYWHtSgRnZh49aog",
-  authDomain: "ecicloo.firebaseapp.com",
-  projectId: "ecicloo",
-  storageBucket: "ecicloo.appspot.com",
-  messagingSenderId: "621707276043",
-  appId: "1:621707276043:web:d18d697c865bff8b187c0e"
+  apiKey: "AIzaSyAhXGsmHm-6UshQtlwogiQTDhmZHAwWDUs",
+  authDomain: "eciclo-prod.firebaseapp.com",
+  projectId: "eciclo-prod",
+  storageBucket: "eciclo-prod.appspot.com",
+  messagingSenderId: "79000886048",
+  appId: "1:79000886048:web:393eeb67fcb4e92bb75545",
+  measurementId: "G-078JQKC7V1"
 };
 const app = initializeApp(firebaseConfig);
 //#endregion
@@ -34,7 +35,7 @@ btSign.addEventListener("click", async(err) => {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     alert("Ambiente Logado no Firebase")
-    window.location.href = "../tInicial.html"
+    window.location.href = "../telas/tInicial.html"
     const user = userCredential.user;
   })
   .catch((error) => {

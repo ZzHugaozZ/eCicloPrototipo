@@ -42,17 +42,13 @@ btConfirmar.addEventListener("click", async (erro) => {
         email: document.getElementById("email").value,
         celular: document.getElementById("celular").value
     }
-    setTimeout(() => {
-        console.log({ cadastro });
-    }, 5000);
     if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
         console.error("Erro de comunicação: ", e);
     } else {
         try {
-            const usuarios = await addDoc(collection(db, "usuarios"), {
-                nome: "Victor Icoma"
-            });
+            const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
             console.log("Coleção ID: ", usuarios.id);
+            window.location.href = "..\telas\tInicial.html";
         } catch (e) {
             console.error("Erro de comunicação: ", e);
         }
