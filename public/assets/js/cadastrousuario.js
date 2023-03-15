@@ -48,7 +48,6 @@ btConfirmar.addEventListener("click", async (erro) => {
         try {
             const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
             console.log("Coleção ID: ", usuarios.id);
-            window.location.href = "..\telas\tInicial.html";
         } catch (e) {
             console.error("Erro de comunicação: ", e);
         }

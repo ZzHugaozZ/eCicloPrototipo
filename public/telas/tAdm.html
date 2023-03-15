@@ -13,106 +13,53 @@
 </head>
 
 <body>
-    <div class="titulo">
-        eCiclo Administrador
-    </div>
-
-    <div class="flex-container">
-
-        <div class="flex-container flex-menu" id="menu">
-            <ul id="myTab" role="tablist">
-                <li class="nav-item" role="presentation" class="nav-link active" id="solicitacoes" data-bs-toggle="tab"
-                    data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                    aria-selected="true">
-                    Solicitações de coleta
-                </li>
-                <li class="nav-item" role="presentation" class="nav-link" id="cadastrarC" data-bs-toggle="tab"
-                    data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
-                    aria-selected="false">
-                    Cadastrar nova cidade
-                </li>
-                <li class="nav-item" role="presentation" class="nav-link" id="cadastrarNL" data-bs-toggle="tab"
-                    data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
-                    aria-selected="false">
-                    Cadastrar novos locais
-                </li>
-                <!-- <li class="nav-item" role="presentation"  class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
-                 type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                   aaa
-                </li>  -->
-            </ul>
-
-        </div>
-
-        <div class="flex-container flex-catalogo" id="catalogo">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-                    tabindex="0">
-                    s
+    <nav class="navbar navbar-dark  fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">eCiclo Administrador</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
-                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                    tabindex="0">
-                    <div class="form">
-                        <form action="#">
-                            <div class="input-box">
-                                <label for="idCidade"> ID* </label>
-                                <input type="number" id="idCidade" name="idCidade" placeholder="Digite um id p/ cidade"
-                                    required>
-                            </div>
-
-                            <div class="input-box">
-                                <label for="cidade"> Cidade* </label>
-                                <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
-                            </div>
-
-                            <div class="login-button">
-                                <button id="botaoConfirma">Confirmar</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
                 </div>
-                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                    tabindex="0">
-                    <div class="form">
-                        <form action="#">
-                            <div class="input-group">
-                                <div class="input-box">
-                                    <label for="local"> Nome local* </label>
-                                    <input type="text" id="local" name="local" placeholder="Digite o nome do local"
-                                        required>
-                                </div>
-
-                                <div class="input-box">
-                                    <label for="endereco"> Rua e bairro*</label>
-                                    <input type="text" id="endereco" name="endereco" placeholder="Digite a rua/bairro"
-                                        required>
-                                </div>
-
-                                <div class="input-box">
-                                    <label for="cidade"> Cidade* </label>
-                                    <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
-                                </div>
-
-                                <div class="input-box">
-                                    <label for="nLocal"> Número* </label>
-                                    <input type="number" id="nLocal" name="nLocal"
-                                        placeholder="Digite o número do local" required>
-                                </div>
-
-                                <div class="login-button">
-                                    <button id="btConfirma">Confirmar</button>
-                                </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-                    tabindex="0">...</div> -->
             </div>
         </div>
-
-    </div>
+    </nav>
 </body>
-<script type="module" src="../assets/js/adm.js"></script>
+<!-- <script type="module" src="../assets/js/adm.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 </script>
