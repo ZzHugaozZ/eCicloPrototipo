@@ -18,11 +18,3 @@ body {
 .offcanvas-title{
     color: #fff;
 }
-
-.dropdown-menu.show{
-    background-color: #088D85;
-}
-
-.dropdown-menu li a{
-    color: #fff;
-}
