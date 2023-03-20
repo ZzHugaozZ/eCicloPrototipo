@@ -107,6 +107,20 @@ body *{
     cursor: pointer;
 }
 
+.btn-rSenha{
+    width: 40%;
+    padding: 10px 0px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: small;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 950px){
     .card-login{
         width: 85%;

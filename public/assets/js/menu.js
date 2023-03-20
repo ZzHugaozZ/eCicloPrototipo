@@ -1,3 +1,5 @@
+// import { getAuth, signOut  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
 class MobileNavbar{
     constructor(mobileMenu, navList, navLinks){
         this.mobileMenu = document.querySelector(mobileMenu);
@@ -40,3 +42,17 @@ const mobileNavbar = new MobileNavbar(
     ".nav-list li"
 );
 mobileNavbar.init();
+
+// function desconectar(){
+//     const auth = getAuth();
+// signOut(auth).then(() => {
+//   alert('desconetado com sucesso');
+// }).catch((erro) => {
+//     alert('algo de errado não está certo');
+// });
+// }
+// const sair = document.getElementById("sair");
+
+// sair.addEventListener("click", (error) => {
+//     desconectar();
+// })

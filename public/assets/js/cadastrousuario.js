@@ -13,35 +13,36 @@ const firebaseConfig = {
     measurementId: "G-078JQKC7V1"
   };
 const app = initializeApp(firebaseConfig);
-//#endregion
 const auth = getAuth(app);
 const db = getFirestore(app);
+//#endregion
+
 const btConfirmar = document.getElementById("btConfirmar");
 const btVoltar = document.getElementById("btVoltar");
 
-btConfirmar.addEventListener("click", async (erro) => {
+btConfirmar.addEventListener("click", async (err) => {
     var email = document.getElementById("email").value
     var senha = document.getElementById("senha").value
     createUserWithEmailAndPassword(auth, email, senha)
 
-        .then((userCredential) => {
+    .then((userCredential) => {
 
-            const user = userCredential.user;
-            console.log(user)
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert("Deu ruim!")
-        });
-})
+        const user = userCredential.user;
+        console.log(user)
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert("Deu ruim!")
+    });
 
-btConfirmar.addEventListener("click", async (erro) => {
     var cadastro = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
-        celular: document.getElementById("celular").value
+        celular: document.getElementById("celular").value,
+        tipoDeUsuario: "comum"
     }
+    
     if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
         console.error("Erro de comunicação: ", e);
     } else {
@@ -52,8 +53,26 @@ btConfirmar.addEventListener("click", async (erro) => {
             console.error("Erro de comunicação: ", e);
         }
     }
-
 })
+
+// btConfirmar.addEventListener("click", async (erro) => {
+//     var cadastro = {
+//         nome: document.getElementById("nome").value,
+//         email: document.getElementById("email").value,
+//         celular: document.getElementById("celular").value
+//     }
+//     if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
+//         console.error("Erro de comunicação: ", e);
+//     } else {
+//         try {
+//             const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
+//             console.log("Coleção ID: ", usuarios.id);
+//         } catch (e) {
+//             console.error("Erro de comunicação: ", e);
+//         }
+//     }
+
+// })
 
 btVoltar.addEventListener("click", (err) => {
     window.location.href = "../telas/index.html";

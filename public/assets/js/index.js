@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import {  sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 // var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
 
@@ -31,7 +32,6 @@ var password = "";
 btSign.addEventListener("click", async(err) => {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
-  console.log(email + "|" + password);
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     alert("Ambiente Logado no Firebase")
@@ -47,4 +47,43 @@ btSign.addEventListener("click", async(err) => {
 btVoltar.addEventListener("click", (err) => {
   window.location.href = "../telas/index.html";
 })
+//#endregion
 
+//#region Redefinição de senha
+function recoverPassword(){
+  var email = "";
+    email = document.getElementById("email").value;
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert('Email de redefinição de senha enviado!');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+}
+const btnRSenha = document.getElementById("btnRSenha");
+
+btnRSenha.addEventListener("click", (error) => {
+  recoverPassword();
+ })
+//#endregion
+
+//#region singOut
+
+// function desconectar(){
+//   const auth = getAuth();
+// signOut(auth).then(() => {
+// alert('desconetado com sucesso');
+// }).catch((error) => {
+//   alert('algo de errado não está certo');
+// });
+// }
+// const sair = document.getElementById("sair");
+
+// sair.addEventListener("click", (error) => {
+//   desconectar();
+// })
+//#endregion
