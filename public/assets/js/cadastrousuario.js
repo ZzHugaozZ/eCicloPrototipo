@@ -36,6 +36,9 @@ btConfirmar.addEventListener("click", async (err) => {
         alert("Deu ruim!")
     });
 
+})
+
+btConfirmar.addEventListener("click", async (erro) => {
     var cadastro = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
@@ -53,26 +56,8 @@ btConfirmar.addEventListener("click", async (err) => {
             console.error("Erro de comunicação: ", e);
         }
     }
+
 })
-
-// btConfirmar.addEventListener("click", async (erro) => {
-//     var cadastro = {
-//         nome: document.getElementById("nome").value,
-//         email: document.getElementById("email").value,
-//         celular: document.getElementById("celular").value
-//     }
-//     if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
-//         console.error("Erro de comunicação: ", e);
-//     } else {
-//         try {
-//             const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
-//             console.log("Coleção ID: ", usuarios.id);
-//         } catch (e) {
-//             console.error("Erro de comunicação: ", e);
-//         }
-//     }
-
-// })
 
 btVoltar.addEventListener("click", (err) => {
     window.location.href = "../telas/index.html";
