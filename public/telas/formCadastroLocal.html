@@ -16,8 +16,8 @@
     <nav class="navbar navbar-dark  fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="./tAdm.html">eCiclo Administrador</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-                aria-controls="offcanvasDarkNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
@@ -46,10 +46,69 @@
             </div>
         </div>
     </nav>
+    <div class="fundo">
+    <div class="container-flex">
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Dados do aparelho</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="marca"> Marca* </label>
+                        <input type="text" id="marca" name="marca" placeholder="Digite a marca" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="modelo"> Modelo*</label>
+                        <input type="text" id="modelo" name="modelo" placeholder="Digite seu modelo" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="tUso"> Tempo de uso* </label>
+                        <input type="text" id="tUso" name="tUso" placeholder="Digite o tempo de uso">
+                    </div>
+                    <div class="gender-inputs">
+                        <div class="gender-title">
+                            <h6>Algum problema tecnico?*</h6>
+                        </div>
+
+                        <div class="gender-group">
+                            <div class="gender-input">
+                                <input type="radio" id="yes" name="gender">
+                                <label for="female">Sim</label>
+                            </div>
+
+                            <div class="gender-input">
+                                <input type="radio" id="no" name="gender">
+                                <label for="male">Não</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pProblemas"> Quais? </label>
+                        <input type="text" id="pProblemas" name="pProblemas" placeholder="Digite o problema" required>
+                    </div>
+
+                    <div class="login-button">
+                        <button id="btConfirma">Confirmar</button>
+                    </div>
+                    <div class="back-button">
+                        <button id="btVoltar">Voltar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 <!-- <script type="module" src="../assets/js/adm.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-</script>
+    </script>
 
 </html>
