@@ -71,19 +71,13 @@ btnRSenha.addEventListener("click", (error) => {
  })
 //#endregion
 
-//#region singOut
-
-// function desconectar(){
-//   const auth = getAuth();
-// signOut(auth).then(() => {
-// alert('desconetado com sucesso');
-// }).catch((error) => {
-//   alert('algo de errado não está certo');
-// });
-// }
-// const sair = document.getElementById("sair");
-
-// sair.addEventListener("click", (error) => {
-//   desconectar();
-// })
-//#endregion
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    console.log(user.uid);
+  } else {
+    alert("sem usuario");
+  }
+});
