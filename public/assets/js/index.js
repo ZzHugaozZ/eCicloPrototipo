@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import {  sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 // var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
@@ -41,7 +41,7 @@ btSign.addEventListener("click", async(err) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorCode + " | " + "Deu Rum não existe no Firebase.")
+    alert(errorCode + " | " + "Deu Rum não existe no Firebase." )
   });
 });
 btVoltar.addEventListener("click", (err) => {
@@ -70,14 +70,3 @@ btnRSenha.addEventListener("click", (error) => {
   recoverPassword();
  })
 //#endregion
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    console.log(user.uid);
-  } else {
-    alert("sem usuario");
-  }
-});

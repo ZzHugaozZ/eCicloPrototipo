@@ -6,6 +6,7 @@
 }
 body *{
     box-sizing: border-box;
+    
 }
 
 .main-login{
@@ -23,6 +24,8 @@ body *{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 0;
+    position: relative;
 }
 .left-login h1{
     font-size: 2vw;
@@ -37,6 +40,7 @@ body *{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .card-login{
     width: 60%;
@@ -119,6 +123,10 @@ body *{
     font-size: small;
     letter-spacing: 3px;
     cursor: pointer;
+}
+
+.alerts{
+    display: none;
 }
 
 @media only screen and (max-width: 950px){

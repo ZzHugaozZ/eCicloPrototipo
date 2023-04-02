@@ -20,6 +20,7 @@ const db = getFirestore(app);
 const btConfirmar = document.getElementById("btConfirmar");
 const btVoltar = document.getElementById("btVoltar");
 
+
 btConfirmar.addEventListener("click", async (err) => {
     var email = document.getElementById("email").value
     var senha = document.getElementById("senha").value
@@ -48,6 +49,7 @@ btConfirmar.addEventListener("click", async (erro) => {
     
     if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
         console.error("Erro de comunicação: ", e);
+        
     } else {
         try {
             const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
