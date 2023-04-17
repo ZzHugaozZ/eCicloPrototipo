@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 //#region singOut
 function desconectar(){
-    const auth = getAuth();
+const auth = getAuth();
 signOut(auth).then(() => {
   alert('desconetado com sucesso');
   window.location.href = "../telas/index.html"
@@ -34,12 +34,7 @@ sair.addEventListener("click", (error) => {
 
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    console.log(user.uid);
-  } else {
-    alert("sem usuario");
+  if (!user) {
+    window.location.href = "../telas/index.html";
   }
 });

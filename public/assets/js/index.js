@@ -70,3 +70,9 @@ btnRSenha.addEventListener("click", (error) => {
   recoverPassword();
  })
 //#endregion
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href = "../../telas/tAdm.html";
+  }
+});
