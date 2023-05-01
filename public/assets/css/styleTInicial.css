@@ -289,15 +289,26 @@ nav {
 
 .link-coleta {
     text-decoration: none;
-    text-decoration: none;
     color: #088D85;
     cursor: pointer;
 }
 
-.dropdown-menu.show{
+.dropdown-menu.show {
     background-color: #088D85;
     border-color: #fff;
 }
+
+.sair {
+    border: none;
+    cursor: pointer;
+    background-color: #088D85;
+    color: #fff;
+}
+
+.sair:hover{
+    color: rgb(206, 212, 217)
+}
+
 @media (max-width: 999px) {
     body {
         overflow-x: hidden;

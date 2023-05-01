@@ -16,9 +16,12 @@ const app = initializeApp(firebaseConfig);
 findTransactions();
 
 function findTransactions(){
-    setTimeout(() => {
-        addTransactonsToScreen(fakeTransactions);
-    }, 1000)
+    firebase.firestore()
+    .collection('transactions')
+    .get()
+    .then(snapshot => {
+        console.log(snapshot);
+    })
 }
 
 function addTransactonsToScreen(transactions){
