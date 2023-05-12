@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "ecicloo",
     "public": "public",
     "ignore": [
       "firebase.json",
