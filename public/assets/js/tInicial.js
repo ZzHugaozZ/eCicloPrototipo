@@ -32,9 +32,9 @@ sair.addEventListener("click", (error) => {
 
 //#endregion
 
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (!user) {
-//     window.location.href = "../telas/index.html";
-//   }
-// });
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../telas/index.html";
+  }
+});

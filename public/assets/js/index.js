@@ -1,15 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import {  sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import { getFirestore, getDocs, collection, query, where} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getFirestore, addDoc, getDocs, collection, doc, setDoc, query, where, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
-// var admin = require("https://www.gstatic.com/firebasejs/9.15.0/firebase-admin.js");
-
-// var serviceAccount = require("./serviceAccount.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
+const avisoVazio = document.getElementById("avisoVazio");
+const avisoSucesso = document.getElementById("avisoSucesso");
+const avisoErro = document.getElementById("avisoErro");
+// const vazio = new bootstrap.Toast(avisoVazio);
+// const sucesso = new bootstrap.Toast(avisoSucesso);
+// const erro = new bootstrap.Toast(avisoErro);
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -26,26 +25,39 @@ const app = initializeApp(firebaseConfig);
 
 //#region Area de Login Firebase
 const auth = getAuth(app);
+const db = getFirestore(app);
+const dbUsuarios = collection(db, "usuarios");
 
 const btSign = document.getElementById("btSign");
 var email = "";
 var password = "";
-btSign.addEventListener("click", async(err) => {
+btSign.addEventListener("click", async (err) => {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
   signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    console.log(userCredential);
-    validationUser(auth);
-    alert("Ambiente Logado no Firebase")
-    debugger;
-    window.location.href = "../telas/tInicial.html"
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode + " | " + "Deu Rum não existe no Firebase." )
-  });
+    .then(async (userCredential) => {
+      console.log(userCredential.user.email);
+      const q = query(collection(db, "usuarios"), where("email", "==", userCredential.user.email));
+      var credencial = false;
+      const querySnapshot = await getDocs(q);
+      debugger;
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+        if (doc.data().tipoDeUsuario == "administrador") {
+          credencial = true;
+        }
+      });
+      if (credencial) {
+        window.location.href = "../telas/tAdm.html"
+      } else {
+        window.location.href = "../telas/tInicial.html"
+      }
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage)
+    });
 });
 btVoltar.addEventListener("click", (err) => {
   window.location.href = "../telas/index.html";
@@ -53,26 +65,23 @@ btVoltar.addEventListener("click", (err) => {
 //#endregion
 
 //#region Redefinição de senha
-function recoverPassword(){
+function recoverPassword() {
   var email = "";
-    email = document.getElementById("email").value;
-    const auth = getAuth();
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        alert('Email de redefinição de senha enviado!');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+  email = document.getElementById("email").value;
+  const auth = getAuth();
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert('Email de redefinição de senha enviado!');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 }
 const btnRSenha = document.getElementById("btnRSenha");
 
 btnRSenha.addEventListener("click", (error) => {
   recoverPassword();
- })
+})
 //#endregion
-function validationUser(user){
-  console.log(user)
-}
