@@ -11,7 +11,7 @@ const firebaseConfig = {
     messagingSenderId: "79000886048",
     appId: "1:79000886048:web:393eeb67fcb4e92bb75545",
     measurementId: "G-078JQKC7V1"
-  };
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -22,43 +22,29 @@ const btVoltar = document.getElementById("btVoltar");
 
 
 btConfirmar.addEventListener("click", async (err) => {
-    var email = document.getElementById("email").value
-    var senha = document.getElementById("senha").value
-    createUserWithEmailAndPassword(auth, email, senha)
-
-    .then((userCredential) => {
-
-        const user = userCredential.user;
-        console.log(user)
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert("Deu ruim!")
-    });
-
-})
-
-btConfirmar.addEventListener("click", async (erro) => {
     var cadastro = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
         celular: document.getElementById("celular").value,
+        senha: document.getElementById("senha").value,
         tipoDeUsuario: "comum"
     }
-    
-    if (!cadastro.nome || !cadastro.email || !cadastro.celular) {
-        console.error("Erro de comunicação: ", e);
-        
-    } else {
-        try {
-            const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
-            console.log("Coleção ID: ", usuarios.id);
-        } catch (e) {
-            console.error("Erro de comunicação: ", e);
-        }
-    }
-
+    createUserWithEmailAndPassword(auth, cadastro.email, cadastro.senha)
+        .then(async (userCredential) => {
+            const user = userCredential.user;
+            console.log(user)
+            try {
+                const usuarios = await addDoc(collection(db, "usuarios"), cadastro);
+                console.log("Coleção ID: ", usuarios.id);
+            } catch (e) {
+                console.error("Erro de comunicação: ", e);
+            }
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert("Deu ruim!")
+        });
 })
 
 btVoltar.addEventListener("click", (err) => {
