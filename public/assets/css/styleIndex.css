@@ -15,7 +15,7 @@
 
      
 }
-body{
+.body{
     background-color: rgb(206, 212, 217);
 }
 .cabecalho {
@@ -313,5 +313,76 @@ nav{
     .retangulo2{
         margin-top: 25rem;
     }
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 34, 54);
+}
+
+p {
+    color: black;
+}
+
+.sobre {
+    font-family: "Nunito", sans-serif;
+    color: rgb(32, 101, 167);
+    text-align: center;
+
+}
+
+h5 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 34, 54);
+}
+
+
+
+.paragrafo {
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.container {
+    padding: 0px 50px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+
+}
+
+.ajuda {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(32, 101, 167);
+}
+
+
+footer {
+    justify-content: center;
+    display: flex;
 }
 
