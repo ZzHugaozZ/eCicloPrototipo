@@ -5,9 +5,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
+.body {
     background-color: rgb(206, 212, 217);
-    margin: 0;
 }
 
 .titulo {

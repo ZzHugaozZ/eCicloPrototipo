@@ -7,6 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.body{
+    background-color: rgb(206, 212, 217);
+}
+
 .fundo { 
     background: linear-gradient(0.46turn,#088D85 10% ,#37C7B5 60%, rgb(206, 212, 217) 40%);
     min-height: 100vh;
