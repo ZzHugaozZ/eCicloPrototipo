@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getFirestore, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -16,9 +17,10 @@ const db = getFirestore(app);
 //#endregion
 
 
-const dbClientes = collection(db, "usuarios");
+const dbClientes = collection(db, "enderecos");
 const listaClientes = await getDocs(dbClientes);
 const btSign = document.getElementById("buscar");
+const btVoltar = document.getElementById("btVoltar");
 
 btSign.addEventListener("click", async (err) => {
   let campoBusca = document.getElementById("busca").value;
@@ -54,19 +56,20 @@ btSign.addEventListener("click", async (err) => {
 let tabela = "<table class='table'>" +
   "<thead>" +
   "<tr>" +
-  "<th scope='col'>#</th>" +
-  "<th scope='col'>Nome</th>" +
   "<th scope='col'>Cidade</th>" +
-  "<th scope='col'>E-mail</th>" +
+  "<th scope='col'>Rua</th>" +
+  "<th scope='col'>Numero</th>" +
+  "<th scope='col'>Observação</th>" +
   "</tr>" +
   "</thead>" +
   "<tbody>";
 listaClientes.forEach((lista) => {
   tabela += `<tr>
-        <th scope='row'>${lista.id}</th>
-        <td>${lista.data().nome}</td>
         <td>${lista.data().cidade}</td>
-        <td>${lista.data().email}</td>
+        <td>${lista.data().rua}</td>
+        <td>${lista.data().numero}</td>
+        <td>${lista.data().observacao}</td>
+        
       </tr>`
 })
 tabela += "</tbody>"
@@ -76,6 +79,28 @@ document.getElementById("tabelaHtml").innerHTML = tabela
 
 const btnAdicionar = document.getElementById("btnAdicionar");
 
+btnAdicionar.addEventListener("click", async (error) => {
+  var adicionar = {
+    rua: document.getElementById("rua").value,
+    numero: document.getElementById("numero").value,
+    cidade: document.getElementById("cidade").value,
+    observacao: document.getElementById("observacao").value,
+  }
+
+  try {
+    const enderecos = await addDoc(collection(db, "enderecos"), adicionar);
+    console.log("Coleção ID: ", enderecos.id);
+  } catch (e) {
+    console.error("Erro de comunicação: ", e);
+  }
+
+})
+
+
 btnAdicionar.addEventListener("click", (error) => {
   window.location.href = "../telas/formCadastroCity.html";
+})
+
+btVoltar.addEventListener("click", (error) => {
+  window.location.href = "../telas/cidades.html";
 })
