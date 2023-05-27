@@ -21,6 +21,7 @@ const btConfirmar = document.getElementById("btConfirmar");
 const btVoltar = document.getElementById("btVoltar");
 
 
+
 btConfirmar.addEventListener("click", async (error) => {
     debugger;
     var cadastro = {

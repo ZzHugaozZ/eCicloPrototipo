@@ -22,35 +22,35 @@ const listaClientes = await getDocs(dbClientes);
 const btSign = document.getElementById("buscar");
 const btVoltar = document.getElementById("btVoltar");
 
-btSign.addEventListener("click", async (err) => {
-  let campoBusca = document.getElementById("busca").value;
-  let categoria = document.getElementById("campo").value;
+// btSign.addEventListener("click", async (err) => {
+//   let campoBusca = document.getElementById("busca").value;
+//   let categoria = document.getElementById("campo").value;
 
-  const listaBusca = query(dbClientes, where(categoria, "==", campoBusca));
-  const lista = await getDocs(listaBusca);
+//   const listaBusca = query(dbClientes, where(categoria, "==", campoBusca));
+//   const lista = await getDocs(listaBusca);
 
-  let tabela = "<table class='table'>" +
-    "<thead>" +
-    "<tr>" +
-    "<th scope='col'>#</th>" +
-    "<th scope='col'>Nome</th>" +
-    "<th scope='col'>Cidade</th>" +
-    "<th scope='col'>E-mail</th>" +
-    "</tr>" +
-    "</thead>" +
-    "<tbody>";
-  lista.forEach((lista) => {
-    tabela += `<tr>
-        <th scope='row'>${lista.id}</th>
-        <td>${lista.data().nome}</td>
-        <td>${lista.data().cidade}</td>
-        <td>${lista.data().email}</td>
-      </tr>`
-  })
-  tabela += "</tbody>"
-  "</table>"
-  document.getElementById("tabelaHtml").innerHTML = tabela
-});
+// //   let tabela = "<table class='table'>" +
+// //     "<thead>" +
+// //     "<tr>" +
+// //     "<th scope='col'>#</th>" +
+// //     "<th scope='col'>Nome</th>" +
+// //     "<th scope='col'>Cidade</th>" +
+// //     "<th scope='col'>E-mail</th>" +
+// //     "</tr>" +
+// //     "</thead>" +
+// //     "<tbody>";
+// //   lista.forEach((lista) => {
+// //     tabela += `<tr>
+// //         <th scope='row'>${lista.id}</th>
+// //         <td>${lista.data().nome}</td>
+// //         <td>${lista.data().cidade}</td>
+// //         <td>${lista.data().email}</td>
+// //       </tr>`
+// //   })
+// //   tabela += "</tbody>"
+// //   "</table>"
+// //   document.getElementById("tabelaHtml").innerHTML = tabela
+// // });
 
 //#region tabela
 let tabela = "<table class='table'>" +
@@ -77,37 +77,17 @@ tabela += "</tbody>"
 document.getElementById("tabelaHtml").innerHTML = tabela
 //#endregion
 
-const btnAdicionar = document.getElementById("btnAdicionar");
-
-btnAdicionar.addEventListener("click", async (error) => {
-  var adicionar = {
-    rua: document.getElementById("rua").value,
-    numero: document.getElementById("numero").value,
-    cidade: document.getElementById("cidade").value,
-    observacao: document.getElementById("observacao").value,
-  }
-
-  try {
-    const enderecos = await addDoc(collection(db, "enderecos"), adicionar);
-    console.log("Coleção ID: ", enderecos.id);
-  } catch (e) {
-    console.error("Erro de comunicação: ", e);
-  }
-
-})
-
-
 btnAdicionar.addEventListener("click", (error) => {
   window.location.href = "../telas/formCadastroCity.html";
 })
 
-btVoltar.addEventListener("click", (error) => {
-  window.location.href = "../telas/cidades.html";
-})
+// btVoltar.addEventListener("click", (error) => {
+//   window.location.href = "../telas/cidades.html";
+// })
 
-const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    window.location.href = "../telas/index.html";
-  }
-});
+// const auth = getAuth();
+// onAuthStateChanged(auth, (user) => {
+//   if (!user) {
+//     window.location.href = "../telas/index.html";
+//   }
+// })
