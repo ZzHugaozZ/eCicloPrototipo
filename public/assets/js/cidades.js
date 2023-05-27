@@ -104,3 +104,10 @@ btnAdicionar.addEventListener("click", (error) => {
 btVoltar.addEventListener("click", (error) => {
   window.location.href = "../telas/cidades.html";
 })
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../telas/index.html";
+  }
+});

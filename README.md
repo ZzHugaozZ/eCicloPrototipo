@@ -1,2 +1,0 @@
-# eCicloPrototipo
-Programado NodeJs

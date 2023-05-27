@@ -16,3 +16,9 @@ function Confirmar(){
     console.log(objCategoria);
 }
 
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../telas/index.html";
+  }
+});
