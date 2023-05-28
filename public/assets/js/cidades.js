@@ -22,35 +22,35 @@ const listaClientes = await getDocs(dbClientes);
 const btSign = document.getElementById("buscar");
 const btVoltar = document.getElementById("btVoltar");
 
-// btSign.addEventListener("click", async (err) => {
-//   let campoBusca = document.getElementById("busca").value;
-//   let categoria = document.getElementById("campo").value;
+btSign.addEventListener("click", async (err) => {
+  let campoBusca = document.getElementById("busca").value;
+  let categoria = document.getElementById("campo").value;
 
-//   const listaBusca = query(dbClientes, where(categoria, "==", campoBusca));
-//   const lista = await getDocs(listaBusca);
+  const listaBusca = query(dbClientes, where(categoria, "==", campoBusca));
+  const lista = await getDocs(listaBusca);
 
-// //   let tabela = "<table class='table'>" +
-// //     "<thead>" +
-// //     "<tr>" +
-// //     "<th scope='col'>#</th>" +
-// //     "<th scope='col'>Nome</th>" +
-// //     "<th scope='col'>Cidade</th>" +
-// //     "<th scope='col'>E-mail</th>" +
-// //     "</tr>" +
-// //     "</thead>" +
-// //     "<tbody>";
-// //   lista.forEach((lista) => {
-// //     tabela += `<tr>
-// //         <th scope='row'>${lista.id}</th>
-// //         <td>${lista.data().nome}</td>
-// //         <td>${lista.data().cidade}</td>
-// //         <td>${lista.data().email}</td>
-// //       </tr>`
-// //   })
-// //   tabela += "</tbody>"
-// //   "</table>"
-// //   document.getElementById("tabelaHtml").innerHTML = tabela
-// // });
+  let tabela = "<table class='table'>" +
+    "<thead>" +
+    "<tr>" +
+    "<th scope='col'>Cidade</th>" +
+    "<th scope='col'>Rua</th>" +
+    "<th scope='col'>Numero</th>" +
+    "<th scope='col'>Observação</th>" +
+    "</tr>" +
+    "</thead>" +
+    "<tbody>";
+  lista.forEach((lista) => {
+    tabela += `<tr>
+        <th scope='row'>${lista.id}</th>
+        <td>${lista.data().nome}</td>
+        <td>${lista.data().cidade}</td>
+        <td>${lista.data().email}</td>
+      </tr>`
+  })
+  tabela += "</tbody>"
+  "</table>"
+  document.getElementById("tabelaHtml").innerHTML = tabela
+});
 
 //#region tabela
 let tabela = "<table class='table'>" +
