@@ -3,12 +3,11 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import { getFirestore, addDoc, getDocs, collection, doc, setDoc, query, where, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
-const avisoVazio = document.getElementById("avisoVazio");
-const avisoSucesso = document.getElementById("avisoSucesso");
-const avisoErro = document.getElementById("avisoErro");
-// const vazio = new bootstrap.Toast(avisoVazio);
-// const sucesso = new bootstrap.Toast(avisoSucesso);
-// const erro = new bootstrap.Toast(avisoErro);
+const alertaSucesso = document.getElementById('avisoSucesso')
+const alertaErro = document.getElementById('avisoErro')
+const sucesso = new bootstrap.Toast(alertaSucesso);
+const erro= new bootstrap.Toast(alertaErro);
+
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -28,6 +27,7 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const dbUsuarios = collection(db, "usuarios");
 
+
 const btSign = document.getElementById("btSign");
 var email = "";
 var password = "";
@@ -40,23 +40,25 @@ btSign.addEventListener("click", async (err) => {
       const q = query(collection(db, "usuarios"), where("email", "==", userCredential.user.email));
       var credencial = false;
       const querySnapshot = await getDocs(q);
-      debugger;
       querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
         if (doc.data().tipoDeUsuario == "administrador") {
           credencial = true;
         }
       });
-      if (credencial) {
-        window.location.href = "../telas/tAdm.html"
-      } else {
-        window.location.href = "../telas/tInicial.html"
-      }
+      sucesso.show()
+      setTimeout(() => {
+        if (credencial) {
+          window.location.href = "../telas/tAdm.html"
+        } else {
+          window.location.href = "../telas/tInicial.html"
+        }
+      }, 5000);
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorMessage)
+      erro.show()
     });
 });
 btVoltar.addEventListener("click", (err) => {
