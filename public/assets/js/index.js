@@ -5,9 +5,10 @@ import { getFirestore, addDoc, getDocs, collection, doc, setDoc, query, where, g
 
 const alertaSucesso = document.getElementById('avisoSucesso')
 const alertaErro = document.getElementById('avisoErro')
+const alertRSenha = document.getElementById('avisoRSenha')
 const sucesso = new bootstrap.Toast(alertaSucesso);
 const erro= new bootstrap.Toast(alertaErro);
-
+const RSenha= new bootstrap.Toast(alertRSenha);
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -53,7 +54,7 @@ btSign.addEventListener("click", async (err) => {
         } else {
           window.location.href = "../telas/tInicial.html"
         }
-      }, 5000);
+      }, 1300);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -73,7 +74,7 @@ function recoverPassword() {
   const auth = getAuth();
   sendPasswordResetEmail(auth, email)
     .then(() => {
-      alert('Email de redefinição de senha enviado!');
+      RSenha.show();
     })
     .catch((error) => {
       const errorCode = error.code;

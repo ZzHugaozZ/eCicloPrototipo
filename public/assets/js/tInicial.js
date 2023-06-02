@@ -14,12 +14,18 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   //#endregion
 
+const alertadeslogado = document.getElementById('deslogado')
+const deslogado = new bootstrap.Toast(alertadeslogado);
+
+
 //#region singOut
 function desconectar(){
 const auth = getAuth();
 signOut(auth).then(() => {
-  alert('desconetado com sucesso');
-  window.location.href = "../telas/index.html"
+  setTimeout(() => {
+    deslogado.show(window.location.href = "../telas/index.html")
+  }, 1300);
+  // window.location.href = "../telas/index.html"
 }).catch((erro) => {
     alert('algo de errado não está certo');
 });
