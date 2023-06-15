@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getFirestore, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getAuth,  onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -36,4 +37,15 @@ confirma.addEventListener("click", async (error) => {
 
 })
 
+const btnVoltar = document.getElementById("btVoltar");
 
+btnVoltar.addEventListener("click", async (error) => {
+    window.location.href = "./tAdm.html";
+})
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../index.html";
+  }
+})

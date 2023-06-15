@@ -50,6 +50,11 @@ btConfirmar.addEventListener("click", async (error) => {
 })
 
 btVoltar.addEventListener("click", (err) => {
-    window.location.href = "../telas/index.html";
+    window.location.href = "../index.html";
 })
 
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../index.html";
+  }
+})

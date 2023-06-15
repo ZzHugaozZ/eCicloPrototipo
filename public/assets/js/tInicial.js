@@ -23,7 +23,7 @@ function desconectar(){
 const auth = getAuth();
 signOut(auth).then(() => {
   setTimeout(() => {
-    deslogado.show(window.location.href = "../telas/index.html")
+    deslogado.show(window.location.href = "../index.html")
   }, 1300);
   // window.location.href = "../telas/index.html"
 }).catch((erro) => {
@@ -41,6 +41,6 @@ sair.addEventListener("click", (error) => {
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = "../telas/index.html";
+    window.location.href = "../index.html";
   }
 });

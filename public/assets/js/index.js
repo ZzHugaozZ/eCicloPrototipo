@@ -63,7 +63,7 @@ btSign.addEventListener("click", async (err) => {
     });
 });
 btVoltar.addEventListener("click", (err) => {
-  window.location.href = "../telas/index.html";
+  window.location.href = "../index.html";
 })
 //#endregion
 
@@ -88,3 +88,10 @@ btnRSenha.addEventListener("click", (error) => {
   recoverPassword();
 })
 //#endregion
+
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../index.html";
+  }
+})

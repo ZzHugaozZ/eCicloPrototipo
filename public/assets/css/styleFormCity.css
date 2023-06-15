@@ -66,6 +66,8 @@
  .login-button{
     display: flex;
     align-items: center;
+    flex-direction: column;
+    
 }
 .login-button button{
     border: none;
@@ -166,3 +168,28 @@
     font-weight: 500;
     color: #fff;
 } 
+
+.sair {
+    box-sizing: border-box;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #088D85;
+    border-radius: 10px;
+    position: absolute;
+    width: 184px;
+    height: 56px;
+    left: 50px;
+    top: 225px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 125%;
+    color: #088D85;
+    cursor: pointer;
+    margin-top: 65vh;
+
+}
+
+.sair:hover{
+  background-color:rgb(206, 212, 217);
+}

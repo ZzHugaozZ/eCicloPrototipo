@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import { getFirestore, getDocs, collection, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getAuth, signOut, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 //#region Configuração do App Key
 const firebaseConfig = {
@@ -80,10 +81,27 @@ btnAdicionar.addEventListener("click", (error) => {
   window.location.href = "../telas/formCadEndereco.html";
 })
 
+//#region singOut
+function desconectar(){
+  const auth = getAuth();
+  signOut(auth).then(() => {
+    window.location.href = "../index.html"
+  }).catch((erro) => {
+      alert('algo de errado não está certo');
+  });
+  }
+  const sair = document.getElementById("sair");
+  
+  sair.addEventListener("click", (error) => {
+      desconectar();
+  })
+  
+  //#endregion
+
 
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = "../telas/index.html";
+    window.location.href = "../index.html";
   }
 })
