@@ -24,27 +24,26 @@ const btVoltar = document.getElementById("btVoltar");
 
 btSign.addEventListener("click", async (err) => {
   let campoBusca = document.getElementById("busca").value;
-  let categoria = document.getElementById("campo").value;
 
-  const listaBusca = query(dbClientes, where(categoria, "==", campoBusca));
+  const listaBusca = query(dbClientes, where("cidade", "==", campoBusca));
   const lista = await getDocs(listaBusca);
 
   let tabela = "<table class='table'>" +
-    "<thead>" +
-    "<tr>" +
-    "<th scope='col'>Cidade</th>" +
-    "<th scope='col'>Rua</th>" +
-    "<th scope='col'>Numero</th>" +
-    "<th scope='col'>Observação</th>" +
-    "</tr>" +
-    "</thead>" +
-    "<tbody>";
+  "<thead>" +
+  "<tr>" +
+  "<th scope='col'>Cidade</th>" +
+  "<th scope='col'>Rua</th>" +
+  "<th scope='col'>Numero</th>" +
+  "<th scope='col'>Observação</th>" +
+  "</tr>" +
+  "</thead>" +
+  "<tbody>";
   lista.forEach((lista) => {
     tabela += `<tr>
-        <th scope='row'>${lista.id}</th>
-        <td>${lista.data().nome}</td>
-        <td>${lista.data().cidade}</td>
-        <td>${lista.data().email}</td>
+    <td>${lista.data().cidade}</td>
+        <td>${lista.data().rua}</td>
+        <td>${lista.data().numero}</td>
+        <td>${lista.data().observacao}</td>
       </tr>`
   })
   tabela += "</tbody>"
@@ -78,16 +77,13 @@ document.getElementById("tabelaHtml").innerHTML = tabela
 //#endregion
 
 btnAdicionar.addEventListener("click", (error) => {
-  window.location.href = "../telas/formCadastroCity.html";
+  window.location.href = "../telas/formCadEndereco.html";
 })
 
-// btVoltar.addEventListener("click", (error) => {
-//   window.location.href = "../telas/cidades.html";
-// })
 
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (!user) {
-//     window.location.href = "../telas/index.html";
-//   }
-// })
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "../telas/index.html";
+  }
+})

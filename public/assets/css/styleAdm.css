@@ -6,6 +6,7 @@
 
 .body {
     background-color: rgb(206, 212, 217);
+    margin-top: 65px;
 }
 
 .navbar{
@@ -22,7 +23,6 @@
 .dropdown-menu.show{
     background-color: #088D85;
 }
-
 .dropdown-menu li a{
     color: #fff;
 }
@@ -46,3 +46,109 @@ button.fab.bottom{
 button.fab.right{
     right: 32px;
 }
+
+.tabelaHtmlItem:hover{
+    background:#2bcac0;
+  }
+  
+  .search-tabs {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    margin: 0;
+    margin-top: 50px;
+    margin-right: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  input[type="text"],
+  button,
+  select {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    margin-right: 10px;
+    background-color: rgb(234, 236, 241);
+  }
+  
+  .search-tabs button {
+    background-color: #088D85;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #2bcac0;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #088D85;
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  form:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent rgb(206, 212, 217) transparent;
+  }
+  
+  form:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: rgb(206, 212, 217) transparent transparent transparent;
+  }
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(206, 212, 217);
+    background-color: aliceblue;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgb(234, 236, 241);
+  }
+  
+  th {
+    background-color: #088D85;
+    color:aliceblue;
+  }
+  
+  tr:hover {
+    background-color: rgb(206, 212, 217);
+  }
