@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doaçâo</title>
+        <link rel="stylesheet" href="../assets/css/styleFormColeta.css">
+        <link rel="icon" href="../assets/images/sucesso.png" type="image/png">
+
+    </head>
+
+        
+    <body class="body">
+        <div class="fundo">
+            <div class="container-flex">
+                <div class="form">
+                    <form action="#">
+                        <div class="form-header">
+                            <div class="title">
+                                <h1>Dados do aparelho</h1>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-box">
+                                <label for="marca"> Marca* </label>
+                                <input type="text" id="marca" name="marca" placeholder="Digite a marca" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="modelo"> Modelo*</label>
+                                <input type="text" id="modelo" name="modelo" placeholder="Digite seu modelo" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="tUso"> Tempo de uso* </label>
+                                <input type="text" id="tUso" name="tUso" placeholder="Digite o tempo de uso" >
+                            </div>
+                            <!-- <div class="gender-inputs">
+                                <div class="gender-title">
+                                    <h6>Algum problema tecnico?*</h6>
+                                </div>
+    
+                                <div class="gender-group" id="pTecnico">
+                                    <div class="gender-input">
+                                        <input type="radio" id="yes" name="gender">
+                                        <label for="female">Sim</label>
+                                    </div>
+    
+                                    <div class="gender-input">
+                                        <input type="radio" id="no" name="gender">
+                                        <label for="male">Não</label>
+                                    </div>
+    
+                                </div>
+                            </div> --> 
+
+                            <div class="input-box">
+                                <label for="pProblemas"> Quais? </label>
+                                <input type="text" id="pProblemas" name="pProblemas" placeholder="Digite o problema" required>
+                            </div>
+                        
+                        <div class="login-button">
+                            <button id="btConfirmar">Confirmar</button>
+                        </div>
+                        <div class="back-button">
+                            <button id="btVoltar">Voltar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+<script src="../assets/js/coleta.js" type="module"></script>
+</html>
