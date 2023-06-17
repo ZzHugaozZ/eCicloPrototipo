@@ -23,7 +23,6 @@ const btVoltar = document.getElementById("btVoltar");
 
 
 btConfirmar.addEventListener("click", async (error) => {
-    debugger;
     var cadastro = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
@@ -53,8 +52,3 @@ btVoltar.addEventListener("click", (err) => {
     window.location.href = "../index.html";
 })
 
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    window.location.href = "../index.html";
-  }
-})
