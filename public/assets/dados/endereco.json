@@ -1,7 +1,0 @@
-[
-    { "id": 1, "descricao": "Etec Sylvio de Mattos Carvalho", "rua": "R. Cesário Motta - Centro", "numero":"n° 644" , "cidadeId": 1},
-    { "id": 2, "descricao": "Etec Dr. Adail Nunes da Silva", "rua":"R. Francisco Valzachi - Vila Rosa", "numero":"n° 51" , "cidadeId": 2},
-    { "id": 3, "descricao": "Etec Profª Anna de Oliveira Ferraz","rua":"Av. Bandeirantes - Centro", "numero":"n° 503" , "cidadeId": 3},
-    { "id": 4, "descricao": "Etec Paulino Botelho","rua":"R. Mal. Deodoro - Centro", "numero":"n° 3183" , "cidadeId": 4 }
-
-]
